@@ -1,0 +1,22 @@
+/* TEXT TO SPEECH CONVERSION APPLICATION */
+
+
+
+pip install gtts
+from gtts import gTTS
+import os
+
+# Text to be converted to speech
+text = "Hello, "
+
+# Language in which you want to convert
+language = 'en'
+
+# Passing the text and language to the engine, slow=False means speaking quickly
+speech = gTTS(text=text, lang=language, slow=False)
+
+# Saving the converted audio in a file named sample.mp3
+speech.save("output.mp3")
+
+# Playing the converted file
+os.system("start output.mp3")
